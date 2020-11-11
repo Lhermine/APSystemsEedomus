@@ -1,0 +1,61 @@
+{
+	"plugin_id": "apsystems",
+    "name_fr": "AP Systems",
+	"icon": "APSystemsLogo.png",
+	"version": "1.0",
+	"creation_date": "2020-11-08",
+	"modification_date": "2020-11-08",
+	"author": "Yann A.",
+	"description_fr": "Suivez votre production photovoltaïque avec <a href='https://apsystemsema.com/ema/index.action' target='_blank'>AP Systems</a>",
+	"description_en": "",
+	"description_es": "",
+	"description_it": "",
+	"description_de": "",
+    "forum_link": "",
+    "parameters":
+    [
+		{
+			"parameter": "IP",
+			"description": "Adresse IP locale de la passerelle",
+			"xtype": "textfield",
+			"default_value": "192.168.0.",
+			"field": "width:130, allowBlank:false, maskRe:/[0-9.]/, regex:/^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])$/, regexText:'Adresse IP invalide [0-255].[0-255].[0-255].[0-255]'"
+        },
+		{
+            "parameter": "value",
+            "description": "Production totale",
+            "xtype": "combo",
+            "field": "width:250, allowBlank:false, store:[[1, 'Du jour'], [2, 'Semaine en cours']], editable: false, shadow: true, triggerAction: 'all', typeAhead:true"
+        }
+    ],
+    "scripts":
+	[
+		{
+			"name": "apsystems.php"
+		}
+	],
+    "devices":
+    [
+		{
+			"device_id": "apsystems",
+			"module_id": "51",
+			"type": "http",
+			"name": "plugin.name",
+			"icon": "APSystemsLogo.png",
+			"value_type": "float",
+			"utilisation_id": "26",
+			"value_unit": "kWh",
+			"parameters":
+			{
+				"RAW_URL": "http://localhost/script/?exec=apsystems.php&adress=[VAR1]&val=[VAR2]",
+				"VAR1": "plugin.parameters.IP",
+				"VAR2": "plugin.parameters.value",
+				"RAW_XPATH": "//VALUE",
+				"POLLING": "10",
+				"value_type": "float",
+				"ignore_errors": 3,
+				"hidden_data": "plugin=apsystems"
+			}
+        }
+    ]
+}
