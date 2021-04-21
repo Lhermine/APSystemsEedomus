@@ -25,7 +25,7 @@
             "parameter": "value",
             "description": "Production totale",
             "xtype": "combo",
-            "field": "width:250, allowBlank:false, store:[[1, 'Du jour'], [2, 'Semaine en cours'], [3, 'Temps réels']], editable: false, shadow: true, triggerAction: 'all', typeAhead:true"
+            "field": "width:250, allowBlank:false, store:[[1, 'Du jour'], [2, 'Semaine en cours'], [3, 'Temps réel']], editable: false, shadow: true, triggerAction: 'all', typeAhead:true"
         }
     ],
     "scripts":
