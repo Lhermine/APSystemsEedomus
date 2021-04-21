@@ -2,12 +2,12 @@
 	"plugin_id": "apsystems",
     "name_fr": "AP Systems",
 	"icon": "APSystemsLogo.png",
-	"version": "1.0",
+	"version": "1.1",
 	"creation_date": "2020-11-08",
-	"modification_date": "2020-11-08",
+	"modification_date": "2021-04-21",
 	"author": "Yann A.",
 	"description_fr": "Suivez votre production photovoltaïque avec <a href='https://apsystemsema.com/ema/index.action' target='_blank'>AP Systems</a>",
-	"description_en": "",
+	"description_en": "Follow your photovoltaic production with <a href='https://apsystemsema.com/ema/index.action' target='_blank'>AP Systems</a>",
 	"description_es": "",
 	"description_it": "",
 	"description_de": "",
@@ -25,7 +25,7 @@
             "parameter": "value",
             "description": "Production totale",
             "xtype": "combo",
-            "field": "width:250, allowBlank:false, store:[[1, 'Du jour'], [2, 'Semaine en cours']], editable: false, shadow: true, triggerAction: 'all', typeAhead:true"
+            "field": "width:250, allowBlank:false, store:[[1, 'Du jour'], [2, 'Semaine en cours'], [3, 'Temps réels']], editable: false, shadow: true, triggerAction: 'all', typeAhead:true"
         }
     ],
     "scripts":
